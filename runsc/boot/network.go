@@ -314,6 +314,7 @@ func (n *Network) CreateLinksAndRoutes(args *CreateLinksAndRoutesArgs, _ *struct
 				GvisorGSOEnabled:   link.GvisorGSOEnabled,
 				TXChecksumOffload:  link.TXChecksumOffload,
 				RXChecksumOffload:  link.RXChecksumOffload,
+				DisconnectOk:       true,
 			})
 			if err != nil {
 				return err
@@ -406,6 +407,7 @@ func (n *Network) CreateLinksAndRoutes(args *CreateLinksAndRoutesArgs, _ *struct
 			RXChecksumOffload: link.RXChecksumOffload,
 			InterfaceIndex:    link.InterfaceIndex,
 			Bind:              link.Bind == BindSentry,
+			DisconnectOk:      true,
 		})
 		if err != nil {
 			return err
